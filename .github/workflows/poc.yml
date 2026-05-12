@@ -24,8 +24,8 @@ jobs:
         run: |
           echo "Reading data"
           mkdir -p ~/data
-          if [ -f ~/data/data ]; then
-            cat ~/data/data
+          if [ -f ~/data/data.txt ]; then
+            cat ~/data/data.txt
             echo "Data read"
           else
             echo "File not found"
