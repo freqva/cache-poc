@@ -17,8 +17,8 @@ jobs:
         with:
           path: |
             ~/data
-            key: cache-test-poc-1
-            restore-keys: cache-test-poc-
+          key: cache-test-poc-1
+          restore-keys: cache-test-poc-
 
       - name: Read value
         run: |
