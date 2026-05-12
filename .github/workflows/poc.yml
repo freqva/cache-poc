@@ -1,0 +1,33 @@
+name: Poc for cache fallback on main
+
+on:
+  workflow_dispatch:
+  push:
+
+permissions:
+  contents: read
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache a value
+        uses: actions/cache@v4
+        id: npm-cache
+        with:
+          path: |
+            ~/data
+            key: cache-test-poc-1
+            restore-keys: cache-test-poc-
+
+      - name: Read value
+        run: |
+          echo "Reading data"
+          mkdir -p ~/data
+          echo ~/data/data
+          echo "Data read"
+
+      - name: Save value
+        run: |
+          mkdir -p ~/data
+          date > ~/data/data.txt
